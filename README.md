@@ -10,15 +10,15 @@ UPDATE DATE : 2020.10.30
 
    **실행 화면**
 
-<img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255.jpg" style="zoom: 67%;" /> <img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255_02.jpg" alt="KakaoTalk_20201030_221423255_02" style="zoom:67%;" /> 
+<img src="images/Week1_1.jpg" style="zoom: 67%;" /> <img src="images/week1_2.jpg" alt="Week1_1" style="zoom:67%;" /> 
 
 ​																	필수과제
 
-<img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255_04.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255_03.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+<img src="images/week1_3.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src= images/week1_4.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;"/> 
 
 ​															필수과제 + 심화과제1
 
-<img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255_06.jpg" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" /> <img src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221423255_05.jpg" alt="KakaoTalk_20201030_221423255_05" style="zoom:67%;" />  
+<img src="images/Week1_5.jpg" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" /> <img src="images/Week1_6.jpg" alt="KakaoTalk_20201030_221423255_05" style="zoom:67%;" />  
 
 ​																	심화과제2
 
