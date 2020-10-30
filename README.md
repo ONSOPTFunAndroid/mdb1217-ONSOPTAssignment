@@ -14,11 +14,11 @@ UPDATE DATE : 2020.10.30
 
 ​																	필수과제
 
-<img src="images/week1_3.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src= "images/week1_4.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;"/> 
+<img src="images/week1_3.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week1_4.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 
 ​															필수과제 + 심화과제1
 
-<img src="images/Week1_5.jpg" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" /> <img src="images/Week1_6.jpg" alt="KakaoTalk_20201030_221423255_05" style="zoom:67%;" />  
+<img src="images/Week1_6.jpg" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" /> <img src="images/Week1_5.jpg" alt="KakaoTalk_20201030_221423255_05" style="zoom:67%;" />  
 
 ​																	심화과제2
 
