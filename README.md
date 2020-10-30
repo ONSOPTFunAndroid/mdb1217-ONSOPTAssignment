@@ -22,7 +22,7 @@ UPDATE DATE : 2020.10.30
 
 ​																	심화과제2
 
-<video src="images/Week1_7.mp4"></video>
+<img src="images/Week1_7.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
 
 
@@ -172,16 +172,15 @@ UPDATE DATE : 2020.10.30
 
 
 
-<video src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221427912.mp4"></video> 
+<img src="images/Week2_1.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
 ​																						필수과제
 
-
-<video src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221430653.mp4"></video>
+<img src="images/Week2_2.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
 ​																						성장과제1
 
-<video src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221433410.mp4"></video>
+<img src="images/Week2_3.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
 ​																						성장과제2
 
