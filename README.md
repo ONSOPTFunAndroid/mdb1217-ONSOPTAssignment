@@ -22,7 +22,7 @@ UPDATE DATE : 2020.10.30
 
 ​																	심화과제2
 
-<video src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221424733.mp4"></video>
+<video src="images/Week1_7.mp4"></video>
 
 
 
