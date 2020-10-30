@@ -24,9 +24,6 @@ UPDATE DATE : 2020.10.30
 
 <video src="C:\Users\다비니PC\Desktop\솝트과제\KakaoTalk_20201030_221424733.mp4"></video>
 
-​																						심화과제2
-
-
 
 
 
