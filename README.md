@@ -375,6 +375,6 @@ UPDATE DATE : 2020.11.06
   
   **실행 화면**
 
-<img src="images/Week3_1.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
+  <img src="images/Week3_1.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
 ​																						필수과제
