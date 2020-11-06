@@ -377,4 +377,208 @@ UPDATE DATE : 2020.11.06
 
   <img src="images/Week3_1.gif" alt="KakaoTalk_20201030_221423255_06" style="zoom:67%;" />
 
-​																						필수과제
+																	필수과제
+
+
+**주요코드**
+
+- 필수과제 
+
+  **Adapter.kt, Adapter2.kt**
+
+  ```kotlin
+  class ViewPagerAdapter(fm : FragmentManager) : FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+      var fragments = listOf<Fragment>()
+  
+      override fun getItem(position: Int): Fragment = fragments[position]
+  
+      override fun getCount(): Int = fragments.size
+  }
+  ```
+
+  두 소스 모두 ViewPagerAdapter를 똑같은 형태(FragmentStatePagerAdapter를 상속받아서..)로 만들어 줬습니다. Adapter.kt는 탭 레이아웃의 전환에 사용하였고, Adapter2.kt는 bottom nevigation을 이용해서 전체 뷰를 전환할 때 사용했습니다.
+
+  
+
+​		**Fragment1.kt**
+
+  ```kotlin
+override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_1, container, false)
+
+        return view
+    }
+
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+       	super.onViewCreated(view, savedInstanceState)
+
+        viewpagerAdapter = ViewPagerAdapter(childFragmentManager)
+        viewpagerAdapter.fragments = listOf(
+            Fragment2(),
+            Fragment3()
+        )
+
+        sample_tab_viewpager.adapter = viewpagerAdapter
+
+        sample_tab.setupWithViewPager(sample_tab_viewpager)
+        sample_tab.apply {
+            getTabAt(0)?.text = "INFO"
+            getTabAt(1)?.text = "OTHER"
+        }
+
+        sample_tab_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {}
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {}
+            // ViewPager의 페이지 중 하나가 선택된 경우
+            override fun onPageSelected(position: Int) {
+                sample_tab.getTabAt(position)?.isSelected
+            }
+        })
+    }
+  ```
+
+  탭 레이아웃이 들어가 있는 Fragment1.kt(프로필 화면 구현)의 코드입니다. activity에서 ViewPagerAdapter()를 구현할 때와는 다르게, ViewPagerAdapter(**childFragmentManager**) 이런 식으로 구현해줍니다. Fragment의 경우 Activity가 아니기 때문에 childFrgmentManager를 써줍니다. 
+		
+
+​		**RecyclerFragment.kt**
+
+  ```kotlin
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_second, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        sampleAdapter = activity?.let { SampleAdapter(it) }!!
+
+        sampleAdapter.itemClick = object : SampleAdapter.ItemClick {
+            override fun onClick(view: View, position: Int) {
+                val title: TextView = view.findViewById(R.id.item_title);
+                val subTitle: TextView = view.findViewById(R.id.item_subTitle);
+                val intent = Intent(view.context, Detailed_Activity::class.java)
+                intent.putExtra("title", title.text.toString())
+                intent.putExtra("subtitle", subTitle.text.toString())
+                startActivity(intent)
+            }
+        }
+
+        val itemTouchHelperCallback = ItemTouchHelperCallback(sampleAdapter)
+        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        itemTouchHelper.attachToRecyclerView(main_rcv)
+
+        sampleAdapter.setItemViewType(0);
+        main_rcv.adapter = sampleAdapter
+        main_rcv.layoutManager = LinearLayoutManager(activity)
+
+        switch2.setOnCheckedChangeListener { CompoundButton, onSwitch ->
+            //  스위치가 켜지면
+            if (onSwitch) {
+                sampleAdapter.setItemViewType(1)
+                main_rcv.adapter = sampleAdapter
+                main_rcv.layoutManager = GridLayoutManager(activity, 2)
+            }
+            //  스위치가 꺼지면
+            else {
+                sampleAdapter.setItemViewType(0);
+                main_rcv.adapter = sampleAdapter
+                main_rcv.layoutManager = LinearLayoutManager(activity)
+            }
+        }
+
+        sampleAdapter.data = mutableListOf(
+            ProfileData("이름", "문다빈"),
+            ProfileData("나이", "23"),
+            ProfileData("파트", "안드로이드"),
+            ProfileData("GitHub", "https://github.com/mdb1217"),
+            ProfileData("Blog", "https://blog.naver.com/mdb1217"),
+            ProfileData("Sopt", "www.sopt.org")
+        )
+        sampleAdapter.notifyDataSetChanged()
+
+        button7.setOnClickListener {
+            removeData()
+            this.activity?.finish()
+        }
+    }
+
+    private fun removeData() {
+        val pref = this.activity?.getSharedPreferences("pref", 0)
+        val edit = pref?.edit()
+        edit?.remove("id")
+        edit?.remove("pass")
+        edit?.remove("check")
+
+        edit?.apply()
+
+        Toast.makeText(activity, "로그아웃 완료", Toast.LENGTH_SHORT).show()
+    }
+  ```
+
+  2주차 과제 였던 RecyclerView를 구현한 RecyclerFragment.kt입니다. 위에서와 마찬가지로, RecyclerFragment는 activity가 아닌 Fragment이기때문에 **activity**를 이용해서 여러가지 기능을 구현해주었습니다.
+
+ 
+
+​		**Activity.kt**
+
+  ```kotlin
+class Activity : AppCompatActivity() {
+    private lateinit var viewpagerAdapter2 : ViewPagerAdapter2
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_)
+
+        val fragment1 = Fragment1()
+
+        viewpagerAdapter2 = ViewPagerAdapter2(supportFragmentManager)
+        viewpagerAdapter2.fragments = listOf(
+            Fragment1(),
+            RecyclerFragment(),
+            BlankFragment()
+        )
+
+        sample_viewpager.adapter = viewpagerAdapter2
+
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, fragment1).commit()
+
+        sample_bottom_navi.setOnNavigationItemSelectedListener {
+            var index by Delegates.notNull<Int>()
+            when(it.itemId){
+                R.id.menu_brush -> index = 0
+                R.id.menu_camera -> index = 1
+                R.id.menu_checkbox -> index = 2
+            }
+            sample_viewpager.currentItem = index
+            true
+        }
+
+        sample_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {}
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {}
+            // ViewPager의 페이지 중 하나가 선택된 경우
+            override fun onPageSelected(position: Int) {
+                sample_bottom_navi.menu.getItem(position).isChecked = true
+            }
+        })
+    }
+}
+  ```
+
+  bottom nevigation이 이용되는 ViewPager가 구현된 화면입니다.
