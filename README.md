@@ -1,6 +1,6 @@
 # SOPT 27기 안드로이드 과제
 
-UPDATE DATE : 2020.11.06
+UPDATE DATE : 2020.12.04
 
 ## 목차
 
@@ -10,6 +10,7 @@ UPDATE DATE : 2020.11.06
 
 [3주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
+[6주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
 ## 1주차 과제
 
@@ -602,14 +603,14 @@ class Activity : AppCompatActivity() {
 <img src="images/Week6_1.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> 
 
 ​	postman
-<img src="images/Week6_2.png" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.png" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+<img src="images/Week6_2.PNG" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.PNG" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	회원가입
 
-<img src="images/Week6_4.png" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.png" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+<img src="images/Week6_4.PNG" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.PNG" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	로그인
 
 ​	성장과제1
-<img src="images/week6_6.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" />
+<img src="images/Week6_6.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" />
 
 
 **주요코드**
