@@ -4,13 +4,13 @@ UPDATE DATE : 2020.12.04
 
 ## 목차
 
-[1주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#1%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
+[1주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week6/README.md#1%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
-[2주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
+[2주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week6/README.md#2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
-[3주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
+[3주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week6/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
-[6주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week3/README.md#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
+[6주차 과제](https://github.com/ONSOPTFunAndroid/mdb1217-ONSOPTAssignment/blob/week6/README.md#6%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C)
 
 ## 1주차 과제
 
