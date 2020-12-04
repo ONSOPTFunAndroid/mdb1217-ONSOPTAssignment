@@ -593,7 +593,7 @@ class Activity : AppCompatActivity() {
 
   bottom nevigation이 이용되는 ViewPager가 구현된 화면입니다.
   
-    ## 6주차 과제 ##
+## 6주차 과제 ##
 
 **실행 화면**
 
