@@ -597,19 +597,20 @@ class Activity : AppCompatActivity() {
 
 **실행 화면**
 
-
-
 ​	필수과제
+
 <img src="images/Week6_1.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> 
 
 ​	postman
+
 <img src="images/Week6_2.PNG" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.PNG" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	회원가입
-
+	
 <img src="images/Week6_4.PNG" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.PNG" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	로그인
 
 ​	성장과제1
+
 <img src="images/Week6_6.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" />
 
 
