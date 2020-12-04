@@ -591,3 +591,319 @@ class Activity : AppCompatActivity() {
   ```
 
   bottom nevigation이 이용되는 ViewPager가 구현된 화면입니다.
+  
+    ## 6주차 과제
+
+**실행 화면**
+
+
+
+​	필수과제
+<img src="images/Week6_1.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> 
+
+​	postman
+<img src="images/Week6_2.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+	회원가입
+
+<img src="images/Week6_4.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+	로그인
+
+​	성장과제1
+<img src="images/week6_6.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" />
+
+
+**주요코드**
+
+   * 필수과제
+
+     **SoptService.kt**
+
+     ```kotlin
+     interface SoptService {
+         @Headers("Content-Type:application/json")
+         @POST("users/signin")
+         fun postLogin(
+             @Body body : RequestLoginData
+         ) : Call<ResponseLoginData>
+     }
+     ```
+
+     로그인 Retrofit Interface를 설계한 코드이다.
+
+     
+
+     **SoptServiceImpl.kt**
+
+     ```kotlin
+     object SoptServiceImpl {
+         private const val BASE_URL = "http://15.164.83.210:3000/"
+         private val retrofit : Retrofit = Retrofit.Builder()
+             .baseUrl(BASE_URL)
+             .addConverterFactory(GsonConverterFactory.create())
+             .build()
+         val service : SoptService = retrofit.create(SoptService::class.java)
+     }
+     ```
+
+     싱글톤으로 만든 로그인 실제 구현체
+
+
+
+​		**RequestLoginData.kt**
+
+```kotlin
+data class RequestLoginData(
+    val email : String,
+    val password : String
+)
+```
+
+​		**ResponseLoginData.kt**
+
+```kotlin
+data class ResponseLoginData(
+    val data: Data,
+    val message: String,
+    val status: Int,
+    val success: Boolean
+) {
+    data class Data(
+        val email: String,
+        val password: String,
+        val userName: String
+    )
+}
+```
+
+각각 requestdata와 responsedata를 구현한 data코드이다.
+
+
+
+​		**SoptSignup.kt**
+
+```kotlin
+interface SoptSignup {
+    @Headers("Content-Type:application/json")
+    @POST("users/signup")
+    fun postSignup(
+        @Body body : RequestSignupData
+    ) : Call<ResponseSignupData>
+}
+```
+
+회원가입 Retrofit Interface를 설계한 코드이다.
+
+
+
+​		**SoptSignupImpl.kt**
+
+```kotlin
+object SoptSignupImpl {
+    private const val BASE_URL = "http://15.164.83.210:3000/"
+    private val retrofit : Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    val service : SoptSignup = retrofit.create(SoptSignup::class.java)
+}
+```
+
+싱글톤으로 만든 회원가입 실제 구현체
+
+
+
+​		**RequestSignupData.kt**
+
+```kotlin
+data class RequestSignupData (
+    val email : String,
+    val password : String,
+    val userName : String
+)
+```
+
+​		**ResponseSignupData.kt**
+
+```kotlin
+data class ResponseSignupData(
+    val data: Data,
+    val message: String,
+    val status: Int,
+    val success: Boolean
+) {
+    data class Data(
+        val email: String,
+        val password: String,
+        val userName: String
+    )
+}
+```
+
+각각 requestdata와 responsedata를 구현한 data코드이다.
+
+
+
+​		**MainActivty.kt**
+
+```kotlin
+login_btn.setOnClickListener{
+            val email = editTextTextPersonName.text.toString()
+            val password = editTextTextPersonName2.text.toString()
+            val call : Call<ResponseLoginData> = SoptServiceImpl.service.postLogin(
+                RequestLoginData(email = email, password = password)
+            )
+            call.enqueue(object : Callback<ResponseLoginData> {
+                override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
+
+                }
+                override fun onResponse(
+                    call: Call<ResponseLoginData>,
+                    response: Response<ResponseLoginData>
+                ) {
+                    response.takeIf { it.isSuccessful}
+                        ?.body()
+                        ?.let { it ->
+                            Toast.makeText(this@MainActivity, it.data.userName + "님 반갑습니다.", Toast.LENGTH_SHORT).show()
+                            //it.data.userName
+                            saveData()
+                            val intent = Intent(this@MainActivity, Activity::class.java)
+                            startActivity(intent)
+                        } ?: showError(response.errorBody())
+                }
+            })
+        }
+```
+
+login button을 click하면 서버에 통신을 요청해서 성공시, toast메시지를 출력하게 하는 코드이다.
+
+
+
+​		**SignUpActivty.kt**
+
+```kotlin
+ button.setOnClickListener{
+            val name : String = editTextTextPersonName3.text.toString()
+            val email = editTextTextPersonName4.text.toString()
+            val password = editTextTextPersonName5.text.toString()
+            val call : Call<ResponseSignupData> = SoptSignupImpl.service.postSignup(
+                RequestSignupData(email = email, password = password, userName = name)
+            )
+            call.enqueue(object : Callback<ResponseSignupData> {
+                override fun onFailure(call: Call<ResponseSignupData>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onResponse(
+                    call: Call<ResponseSignupData>,
+                    response: Response<ResponseSignupData>
+                ) {
+                    response.takeIf { it.isSuccessful}
+                        ?.body()
+                        ?.let { it ->
+                            Toast.makeText(this@SignUpActivity, it.data.email + " 회원가입 완료", Toast.LENGTH_SHORT).show()
+                            //it.data.userName
+                            val intent = Intent(this@SignUpActivity, MainActivity::class.java)
+                            setResult(1002, intent)
+                            intent.putExtra("name", name)
+                            intent.putExtra("id", email)
+                            intent.putExtra("pass", password)
+                            finish()
+                        } ?: showError(response.errorBody())
+                }
+            })
+```
+
+button을 click하면 서버에 통신을 요청해서 성공하면 "회원가입 완료"라는 토스트 메시지를 띄우는 코드이다.
+
+
+
+* 성장과제1
+
+  **UserListService.kt**
+
+  ```kotlin
+  interface UserListService {
+      @Headers("Content-Type:application/json")
+      @GET("/api/users?page=2")
+      fun GetUser() : Call<ResponseUserData>
+  }
+  ```
+
+  Retrofit Interface를 설계한 코드이다.
+
+  
+
+  **UserListImpl.kt**
+
+  ```kotlin
+  object UserListImpl {
+      private const val BASE_URL = "https://reqres.in/"
+      private val retrofit : Retrofit = Retrofit.Builder()
+          .baseUrl(BASE_URL)
+          .addConverterFactory(GsonConverterFactory.create())
+          .build()
+      val service : UserListService = retrofit.create(UserListService::class.java)
+  }
+  ```
+
+  싱글톤으로 만든 실제 구현체
+
+  
+
+  **ResponseUserData.kt**
+
+  ```kotlin
+  data class ResponseUserData(
+      val data: List<Data>,
+      val page: Int,
+      val per_page: Int,
+      val support: Support,
+      val total: Int,
+      val total_pages: Int
+  ) {
+      data class Data(
+          val avatar: String,
+          val email: String,
+          val first_name: String,
+          val id: Int,
+          val last_name: String
+      )
+  
+      data class Support(
+          val text: String,
+          val url: String
+      )
+  }
+  ```
+
+  responsedata를 구현한 data코드이다.
+
+  
+
+  **RecyclerFragment.kt**
+
+  ```kotlin
+  val call : Call<ResponseUserData> = UserListImpl.service.GetUser()
+          call.enqueue(object : Callback<ResponseUserData> {
+              override fun onFailure(call: Call<ResponseUserData>, t: Throwable) {
+                  TODO("Not yet implemented")
+              }
+  
+              override fun onResponse(
+                  call: Call<ResponseUserData>,
+                  response: Response<ResponseUserData>
+              ) {
+                  response.takeIf { it.isSuccessful}
+                      ?.body()
+                      ?.let { it ->
+                          //it.data.userName
+                          sampleAdapter.data = it.data as MutableList<ResponseUserData.Data>
+                          sampleAdapter.notifyDataSetChanged()
+                      } ?: showError(response.errorBody())
+              }
+          })
+  ```
+
+  서버에 통신을 요청해서 성공하면 리사이클러 뷰에 받아온 데이터를 적용시키는 코드이다.
+
+
