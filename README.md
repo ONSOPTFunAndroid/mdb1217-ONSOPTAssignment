@@ -602,10 +602,10 @@ class Activity : AppCompatActivity() {
 <img src="images/Week6_1.gif" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> 
 
 ​	postman
-<img src="images/Week6_2.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+<img src="images/Week6_2.png" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_3.png" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	회원가입
 
-<img src="images/Week6_4.jpg" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.jpg" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
+<img src="images/Week6_4.png" alt="KakaoTalk_20201030_221423255_04" style="zoom:67%;" /> <img src="images/Week6_5.png" alt="KakaoTalk_20201030_221423255_03" style="zoom:67%;" /> 
 	로그인
 
 ​	성장과제1
