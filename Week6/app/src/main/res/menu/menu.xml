@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_brush"
+        android:icon="@drawable/ic_baseline_profile"
+        android:checked="false"
+        android:title="Profile" />
+    <item
+        android:id="@+id/menu_camera"
+        android:icon="@drawable/ic_baseline_list"
+        android:title="Recycler" />
+    <item
+        android:id="@+id/menu_checkbox"
+        android:icon="@drawable/ic_baseline_empty"
+        android:title="Search" />
+</menu>
